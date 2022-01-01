@@ -1,0 +1,53 @@
+<?php
+
+
+namespace App\Http\Controllers\Students;
+use App\Repository\AttendancesRepositoryInterface;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class AttendancesController extends Controller
+{
+    protected $Attendance;
+
+    public function __construct(AttendancesRepositoryInterface $Attendance)
+    {
+        $this->Attendance = $Attendance;
+    }
+
+
+    public function index()
+    {
+        return $this->Attendance->index();
+    }
+
+
+
+    public function store(Request $request)
+    {
+        return $this->Attendance->store($request);
+    }
+
+
+    public function show($id)
+    {
+        return $this->Attendance->show($id);
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+
+    public function destroy($id)
+    {
+        //
+    }
+}
